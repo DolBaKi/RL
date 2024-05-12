@@ -17,3 +17,27 @@
     손흥민존에 왔다
         슛을한다 r=50
     볼 아웃 r=-50
+### neural_network
+    MLP를 짜보며 예전에 ResNet을 직접 구현한 기억이 났다. 당시의 기억을 떠올리며 코드를 작성해보려 했지만 막상 쉽게 되지는 않았다
+    오늘 다시 복습한 내용이다
+    nn.Linear(x,y) : x개의 뉴런에서 y개의 뉴런으로 이어주는 코드
+    MSELoss : weight의 정답과 예측의 차의 제곱의 합을 구하는 코드
+    CrossEntropyLoss : 확률의 차를 계산하는 코드
+    
+    코드 기본적인 구현
+    
+    네트워크 구현 코드
+    class Net(nn.Module):
+        def __init__(self):
+            super(Net,self).__init__()
+        def forward(self,x)
+            x = ...
+            return x
+    
+    
+    훈련 코드
+    optimizer.zero_grad() # 초기화
+    output = model(x) # 예측
+    loss = criterion(output,y) # 손실함수 계산
+    loss.backward() # 손실함수 미분
+    optimizer.step() # 경사에서 한 단계 하강하기
